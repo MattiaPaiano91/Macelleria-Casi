@@ -1,7 +1,7 @@
 // pages/contact.tsx
 import React from 'react';
 import Head from 'next/head';
-import { Phone, Mail, MapPin, Clock } from 'lucide-react';
+// import { Phone, Mail, MapPin, Clock } from 'lucide-react';
 import ContactForm from '@/components/ContactForm';
 
 const ContactPage: React.FC = () => {

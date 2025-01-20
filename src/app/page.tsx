@@ -1,11 +1,12 @@
 // pages/index.js
 import React from 'react';
 import Head from 'next/head';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+
 import { Clock, Phone, MapPin } from 'lucide-react';
 
+
 export default function HomePage() {
+// <-- scope is for selector text (optional)
   return (
     <>
       <Head>
@@ -17,7 +18,7 @@ export default function HomePage() {
         {/* Hero Section */}
         <section className="relative h-96 bg-gray-900">
           <div className="absolute inset-0  bg-cover bg-center opacity-60"></div>
-          <div className="relative container mx-auto px-4 h-full flex items-center">
+          <div className="relative container mx-auto px-4 h-full flex items-center jumbo">
             <div className="text-white max-w-2xl">
               <h1 className="text-5xl font-bold mb-4">Benvenuto nella Macelleria Paiano</h1>
               <p className="text-xl mb-8">Dal 1980 portiamo sulla vostra tavola carni selezionate di prima qualità</p>

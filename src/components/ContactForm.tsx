@@ -1,5 +1,5 @@
-// components/ContactForm.tsx
 'use client';
+// components/ContactForm.tsx
 
 import React from 'react';
 
