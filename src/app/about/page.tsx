@@ -53,7 +53,7 @@ export default function AboutPage() {
               <div className="mt-12 p-6 bg-red-50 rounded-lg">
                 <h2 className="text-2xl font-semibold mb-4">La Nostra Esperienza</h2>
                 <p className="text-gray-700">
-                  Con mezzo secolo di esperienza nel settore, abbiamo perfezionato l'arte 
+                  Con mezzo secolo di esperienza nel settore, abbiamo perfezionato l&apos;arte 
                   della macelleria, combinando tecniche tradizionali con moderne pratiche 
                   di conservazione e preparazione delle carni. Il nostro team di esperti 
                   macellai è sempre pronto a consigliarvi il taglio migliore per ogni 
