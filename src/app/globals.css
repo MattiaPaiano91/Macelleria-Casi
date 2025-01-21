@@ -23,3 +23,15 @@ body {
 .banner-content {
   height: 400px;
 }
+
+
+.parallax {
+  background-image: url('/parallax.webp');
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  height: 300px;
+  width: 100%;
+}

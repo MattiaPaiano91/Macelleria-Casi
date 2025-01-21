@@ -2,6 +2,7 @@
 import React from 'react';
 import Head from 'next/head';
 import Jumbo from '../components/Jumbo';
+import Image from 'next/image';
 
 import { Clock, Phone, MapPin } from 'lucide-react';
 
@@ -22,7 +23,7 @@ export default function HomePage() {
               <p className="text-xl mb-8">Dal 1980 portiamo sulla vostra tavola carni selezionate di prima qualità</p>
               <div className="button-box">
                 <button className="bg-red-800 text-white px-8 py-3 rounded-lg hover:bg-red-700 transition-colors">
-                  Scopri i Nostri Prodotti
+                  <a href="#products">Scopri i Nostri Prodotti</a>
                 </button>
               </div>
             </div>
@@ -39,7 +40,7 @@ export default function HomePage() {
                   <Clock className="text-white" size={32} />
                 </div>
                 <h3 className="text-xl font-semibold mb-2">Orari di Apertura</h3>
-                <p>Lun-Sab: 8:00-13:00, 16:30-20:00<br />Dom: Chiuso</p>
+                <p>Lun-Sab: 7:00-13:00, 16:30-20:00<br />Gio: 7:00-13:00 Dom: Chiuso</p>
               </div>
               
               <div className="text-center p-6 bg-red-50 rounded-lg flex flex-col items-center">
@@ -61,15 +62,23 @@ export default function HomePage() {
           </div>
         </section>
 
+        <section className='parallax-section'>
+          <div className='parallax'>
+          
+          </div>
+        </section>
+
         {/* Products Preview */}
-        <section className="py-16 bg-gray-50">
+        <section id='products' className="py-16 bg-gray-50">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-bold text-center mb-12">I Nostri Prodotti</h2>
             <div className="grid md:grid-cols-4 gap-6">
               {["Carni Rosse", "Pollame", "Preparati Pronti", "Salumi"].map((category) => (
                 <div key={category} className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
                   <div className="h-48 bg-gray-200 flex items-center justify-center">
-                    <span className="text-gray-500">Immagine</span>
+                    <span className="text-gray-500">
+                      <Image src={`/category/${category}.webp`} alt={category} width={100} height={100} />
+                    </span>
                   </div>
                   <div className="p-4">
                     <h3 className="text-xl font-semibold mb-2">{category}</h3>
