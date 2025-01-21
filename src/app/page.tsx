@@ -22,8 +22,8 @@ export default function HomePage() {
               <h1 className="text-5xl font-bold mb-4">Macelleria Paiano</h1>
               <p className="text-xl mb-8">Dal 1980 portiamo sulla vostra tavola carni selezionate di prima qualità</p>
               <div className="button-box">
-                <button className="bg-red-800 text-white px-8 py-3 rounded-lg hover:bg-red-700 transition-colors">
-                  <a href="#products">Scopri i Nostri Prodotti</a>
+                <button  className="bg-red-800 text-white px-8 py-3 rounded-lg hover:bg-red-700 transition-colors">
+                  <a  href="#products">Scopri i Nostri Prodotti</a>
                 </button>
               </div>
             </div>

@@ -24,6 +24,10 @@ body {
   height: 400px;
 }
 
+html{
+  scroll-behavior: smooth;
+}
+
 
 .parallax {
   background-image: url('/parallax.webp');
