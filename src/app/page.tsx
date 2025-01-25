@@ -3,6 +3,8 @@ import React from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import foto from '../../public/Entrata.webp';
+import Swiper from '@/components/swiper';
+
 
 import { Clock, Phone, MapPin } from 'lucide-react';
 
@@ -28,12 +30,13 @@ export default function HomePage() {
               </div>
             </div>
               <div className="w-1/2 h-full flex items-end ">
-                <Image
+                {/* <Image
                   id='jumbo-image'
-                  className="rounded-xl"
+                  className="rounded-xl "
                   src={foto}
                   alt="Macelleria Paiano"
-                />
+                /> */}
+                <Swiper />
               </div>
           </div>
         </section>
