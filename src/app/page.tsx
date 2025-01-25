@@ -1,8 +1,8 @@
 // pages/index.js
 import React from 'react';
 import Head from 'next/head';
-import Jumbo from '../components/Jumbo';
 import Image from 'next/image';
+import foto from '../../public/Entrata.webp';
 
 import { Clock, Phone, MapPin } from 'lucide-react';
 
@@ -14,20 +14,27 @@ export default function HomePage() {
         <meta name="description" content="Scopri i migliori prodotti di carne presso la Macelleria Paiano." />
       </Head>
       
-      <main className="min-h-screen">
+      <main className="min-h-screen w-full">
         {/* Hero Section */}
-        <section className="h-96 bg-gray-900 place-items-center grid">
-          <div className="container mx-auto flex justify-between  banner-content">
-            <div className="text-white w-1/2 flex flex-col justify-center">
-              <h1 className="text-5xl font-bold mb-4">Macelleria Paiano</h1>
-              <p className="text-xl mb-8">Dal 1980 portiamo sulla vostra tavola carni selezionate di prima qualità</p>
+        <section className=" bg-gray-900 p-12  banner-content  w-full ">
+          <div className="container mx-auto flex justify-between relative h-full test">
+            <div className="text-white w-1/2 ">
+              <h1 className="text-3xl font-bold mb-4">Macelleria Paiano</h1>
+              <p className="text-ò mb-8">Dal 1980 portiamo sulla vostra tavola carni selezionate di prima qualità</p>
               <div className="button-box">
                 <button  className="bg-red-800 text-white px-8 py-3 rounded-lg hover:bg-red-700 transition-colors">
                   <a  href="#products">Scopri i Nostri Prodotti</a>
                 </button>
               </div>
             </div>
-            <Jumbo></Jumbo>
+              <div className="w-1/2 h-full flex items-end ">
+                <Image
+                  id='jumbo-image'
+                  className="rounded-xl"
+                  src={foto}
+                  alt="Macelleria Paiano"
+                />
+              </div>
           </div>
         </section>
 
@@ -62,7 +69,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className='parallax-section'>
+        <section className='parallax-section '>
           <div className='parallax'>
           
           </div>
