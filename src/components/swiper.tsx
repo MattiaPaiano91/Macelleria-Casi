@@ -11,7 +11,7 @@ import 'swiper/css/pagination';
 
 
 // Import required modules
-import { EffectCube} from 'swiper/modules';
+import { EffectCube,Autoplay, FreeMode} from 'swiper/modules';
 
 const SwiperComponent: React.FC = () => {
   return (
@@ -25,12 +25,12 @@ const SwiperComponent: React.FC = () => {
           shadowOffset: 20,
           shadowScale: 0.94,
         }}
+        loop={true}
         autoplay={{
           delay: 2500,
           disableOnInteraction: false,
         }}
-        // pagination={{ clickable: true }}
-        modules={[EffectCube]}
+        modules={[EffectCube, Autoplay, FreeMode]}
         className="mySwiper"
       >
         <SwiperSlide>
