@@ -1,7 +1,6 @@
-// pages/contact.tsx
+
 import React from 'react';
 import Head from 'next/head';
-// import { Phone, Mail, MapPin, Clock } from 'lucide-react';
 import ContactForm from '@/components/ContactForm';
 
 const ContactPage: React.FC = () => {
@@ -12,7 +11,7 @@ const ContactPage: React.FC = () => {
         <meta name="description" content="Contatta la Macelleria Paiano per informazioni sui nostri prodotti e servizi." />
       </Head>
 
-      <main className="container mx-auto px-4 py-12">
+      <div className="container mx-auto px-4 py-12">
         <h1 className="text-4xl font-bold text-center mb-8">Contatti</h1>
         <p className="text-center text-lg text-gray-600 mb-12 max-w-2xl mx-auto">
           Benvenuti alla Macelleria Paiano! Per qualsiasi informazione, non esitate a contattarci.
@@ -27,7 +26,7 @@ const ContactPage: React.FC = () => {
           {/* Form di Contatto */}
           <ContactForm />
         </div>
-      </main>
+      </div>
     </>
   );
 };

@@ -1,14 +1,20 @@
-// pages/index.js
 import React from 'react';
 import Head from 'next/head';
+import Link from 'next/link';
 import Image from 'next/image';
-import foto from '../../public/Entrata.webp';
 import Swiper from '@/components/swiper';
+import CallToFb from '@/components/CallToFb';
 
 
 import { Clock, Phone, MapPin } from 'lucide-react';
 
 export default function HomePage() {
+
+ const categories = ['Carni Rosse', 'Pollame', 'Preparati Pronti', 'Salumi'];
+
+ const slug_categories = categories.map((category) => category.replace(' ', '_'));
+
+
   return (
     <>
       <Head>
@@ -16,26 +22,20 @@ export default function HomePage() {
         <meta name="description" content="Scopri i migliori prodotti di carne presso la Macelleria Paiano." />
       </Head>
       
-      <main className="min-h-screen w-full">
+      <div className="min-h-screen w-full">
         {/* Hero Section */}
         <section className=" bg-gray-900 p-12  banner-content  w-full ">
           <div className="container mx-auto flex justify-between relative h-full test">
-            <div className="text-white w-1/2 ">
-              <h1 className="text-3xl font-bold mb-4">Macelleria Paiano</h1>
-              <p className="text-ò mb-8">Dal 1980 portiamo sulla vostra tavola carni selezionate di prima qualità</p>
-              <div className="button-box">
-                <button  className="bg-red-800 text-white px-8 py-3 rounded-lg hover:bg-red-700 transition-colors">
-                  <a  href="#products">Scopri i Nostri Prodotti</a>
-                </button>
+              <div className="text-white w-1/2 pt-12">
+                <h1 className="text-3xl font-bold mb-4">Macelleria Paiano</h1>
+                <p className="text-ò mb-8">Dal 1980 portiamo sulla vostra tavola carni selezionate di prima qualità</p>
+                <div className="button-box">
+                  <button  className="bg-red-800 text-white px-8 py-3 rounded-lg hover:bg-red-700 transition-colors">
+                    <a  href="#products">Scopri i Nostri Prodotti</a>
+                  </button>
+                </div>
               </div>
-            </div>
               <div className="w-1/2 h-full flex items-end ">
-                {/* <Image
-                  id='jumbo-image'
-                  className="rounded-xl "
-                  src={foto}
-                  alt="Macelleria Paiano"
-                /> */}
                 <Swiper />
               </div>
           </div>
@@ -83,25 +83,25 @@ export default function HomePage() {
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-bold text-center mb-12">I Nostri Prodotti</h2>
             <div className="grid md:grid-cols-4 gap-6">
-              {["Carni Rosse", "Pollame", "Preparati Pronti", "Salumi"].map((category) => (
-                <div key={category} className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
-                  <div className="h-48 bg-gray-200 flex items-center justify-center">
-                    <span className="text-gray-500">
-                      <Image src={`/category/${category}.webp`} alt={category} width={100} height={100} />
-                    </span>
+              {slug_categories.map((category) => (  
+                <Link href={{ pathname:'/catalog', query:{ category:category } }} key={category} className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
+                  <div className="h-48 bg-gray-200 product">
+                    <img src={`/${category}.webp`} alt={category} className="w-full h-full object-cover" />
                   </div>
                   <div className="p-4">
-                    <h3 className="text-xl font-semibold mb-2">{category}</h3>
-                    <button className="text-red-800 hover:text-red-700">
-                      Scopri di più →
+                    <h3 className="text-xl font-semibold mb-2">{category.replace('_', ' ')}</h3>
+                    <button className="text-red-800 hover:text-red-700 button">
+                      Scopri di più <span className='arrow'>→</span>
                     </button>
                   </div>
-                </div>
+                </Link>
               ))}
             </div>
           </div>
         </section>
-      </main>
+
+        <CallToFb />
+      </div>
     </>
   );
 }

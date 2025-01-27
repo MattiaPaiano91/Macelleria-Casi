@@ -27,7 +27,7 @@ const SwiperComponent: React.FC = () => {
         }}
         loop={true}
         autoplay={{
-          delay: 2500,
+          delay: 3000,
           disableOnInteraction: false,
         }}
         modules={[EffectCube, Autoplay, FreeMode]}

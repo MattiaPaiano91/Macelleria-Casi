@@ -1,7 +1,5 @@
-'use client';
 
 import Link from 'next/link';
-// import Image from 'next/image';
 
 const Header: React.FC = () => {
   return (
@@ -19,10 +17,10 @@ const Header: React.FC = () => {
             <Link href="/" className="hover:text-red-600 transition-colors">Home</Link>
           </li>
           <li>
-            <Link href="/about" className="hover:text-red-600 transition-colors">About</Link>
+            <Link href="/about" className="hover:text-red-600 transition-colors">IL Team</Link>
           </li>
           <li>
-            <Link href="/contact" className="hover:text-red-600 transition-colors">Contact</Link>
+            <Link href="/contact" className="hover:text-red-600 transition-colors">Contattaci</Link>
           </li>
         </ul>
       </nav>

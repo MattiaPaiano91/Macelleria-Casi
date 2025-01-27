@@ -11,7 +11,7 @@ export default function AboutPage() {
         <meta name="description" content="Scopri la storia e la tradizione della Macelleria Paiano." />
       </Head>
 
-      <main className="container mx-auto px-4 py-12">
+      <div className="container mx-auto px-4 py-12">
         <section className="max-w-4xl mx-auto">
           <h1 className="text-4xl font-bold mb-8 text-center">Chi Siamo</h1>
           
@@ -63,7 +63,7 @@ export default function AboutPage() {
             </div>
           </div>
         </section>
-      </main>
+      </div>
     </>
   );
 }

@@ -1,7 +1,10 @@
 'use client';
 
 import { NextPage } from "next";
-import { products } from "../data/product";
+import { Pollame, Preparati_Pronti, Salumi, Carni_Rosse } from "../data/product";
+import { useSearchParams } from 'next/navigation'
+
+import './catalog.css';
 
 interface Product {
   name: string;
@@ -9,11 +12,14 @@ interface Product {
   image: string;
 }
 
-
-
 const CatalogPage: NextPage = () => {
+
+  const searchParams = useSearchParams();
+  const category = searchParams.get('category');
+  let products: Product[] = category === 'Carni_Rosse' ? Carni_Rosse : category === 'Pollame' ? Pollame : category === 'Preparati_Pronti' ? Preparati_Pronti : category === 'Salumi' ? Salumi : [];
+  
   return (
-    <main className="container">
+    <div className="container mx-auto">
       {/* Intestazione Categoria */}
       <section className="category-header">
         <h2>Catalogo Prodotti</h2>
@@ -29,58 +35,18 @@ const CatalogPage: NextPage = () => {
               <figcaption>{product.name}</figcaption>
             </figure>
             <p>{product.description}</p>
-            <button
+            {/* <button
               onClick={() => {
                 alert(`Dettagli per: ${product.name}`);
               }}
             >
               Scopri di più
-            </button>
+            </button> */}
           </div>
         ))}
       </div>
 
-      <style jsx>{`
-        .container {
-          padding: 2rem;
-        }
-        .category-header {
-          text-align: center;
-          margin-bottom: 2rem;
-        }
-        .product-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-          gap: 1.5rem;
-        }
-        .product-card {
-          border: 1px solid #ddd;
-          border-radius: 8px;
-          overflow: hidden;
-          box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-          text-align: center;
-          padding: 1rem;
-          background: #fff;
-        }
-        .product-card img {
-          max-width: 100%;
-          height: auto;
-          border-radius: 4px;
-        }
-        .product-card button {
-          margin-top: 1rem;
-          padding: 0.5rem 1rem;
-          background: #d90429;
-          color: white;
-          border: none;
-          border-radius: 4px;
-          cursor: pointer;
-        }
-        .product-card button:hover {
-          background: #b60322;
-        }
-      `}</style>
-    </main>
+    </div>
   );
 };
 
