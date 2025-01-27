@@ -1,7 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import Image from 'next/image';
 import Swiper from '@/components/swiper';
 import CallToFb from '@/components/CallToFb';
 
