@@ -3,7 +3,7 @@
 import { NextPage } from "next";
 import { Pollame, Preparati_Pronti, Salumi, Carni_Rosse } from "../data/product";
 import { useSearchParams } from 'next/navigation'
-
+import { Suspense } from 'react'
 import './catalog.css';
 
 interface Product {
@@ -12,14 +12,17 @@ interface Product {
   image: string;
 }
 
-const CatalogPage: NextPage = () => {
-
+// Componente separato per il contenuto che usa useSearchParams
+const CatalogContent = () => {
   const searchParams = useSearchParams();
   const category = searchParams.get('category');
-  let products: Product[] = category === 'Carni_Rosse' ? Carni_Rosse : category === 'Pollame' ? Pollame : category === 'Preparati_Pronti' ? Preparati_Pronti : category === 'Salumi' ? Salumi : [];
+  let products: Product[] = category === 'Carni_Rosse' ? Carni_Rosse : 
+                           category === 'Pollame' ? Pollame : 
+                           category === 'Preparati_Pronti' ? Preparati_Pronti : 
+                           category === 'Salumi' ? Salumi : [];
   
   return (
-    <div className="container mx-auto">
+    <>
       {/* Intestazione Categoria */}
       <section className="category-header">
         <h2>Catalogo Prodotti</h2>
@@ -35,17 +38,20 @@ const CatalogPage: NextPage = () => {
               <figcaption>{product.name}</figcaption>
             </figure>
             <p>{product.description}</p>
-            {/* <button
-              onClick={() => {
-                alert(`Dettagli per: ${product.name}`);
-              }}
-            >
-              Scopri di più
-            </button> */}
           </div>
         ))}
       </div>
+    </>
+  );
+};
 
+// Componente principale della pagina
+const CatalogPage: NextPage = () => {
+  return (
+    <div className="container mx-auto">
+      <Suspense fallback={<div>Loading...</div>}>
+        <CatalogContent />
+      </Suspense>
     </div>
   );
 };
