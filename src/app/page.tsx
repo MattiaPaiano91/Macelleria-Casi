@@ -23,9 +23,9 @@ export default function HomePage() {
       <div className="min-h-screen w-full">
         {/* Hero Section */}
         <section className=" bg-gray-900 p-12  banner-content  w-full ">
-          <div className="container mx-auto flex justify-between relative h-full test">
-              <div className="text-white w-1/2 pt-12">
-                <h1 className="text-3xl font-bold mb-4">Macelleria Paiano</h1>
+          <div className="container mx-auto flex justify-center relative h-full test">
+              <div className="text-white text-center w-3/4 pt-12">
+                <h1 className="text-6xl font-bold mb-4">Macelleria Paiano</h1>
                 <p className="text-ò mb-8">Dal 1980 portiamo sulla vostra tavola carni selezionate di prima qualità</p>
                 <div className="button-box">
                   <button  className="bg-red-800 text-white px-8 py-3 rounded-lg hover:bg-red-700 transition-colors">
