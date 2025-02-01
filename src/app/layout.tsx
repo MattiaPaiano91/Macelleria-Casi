@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from 'next/font/google';
-import '@/app/globals.css';
+import '@/style/globals.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
@@ -22,9 +22,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="it" suppressHydrationWarning>
-      <body className={`${inter.className} min-h-screen flex flex-col`} suppressHydrationWarning>
+      <body className={`${inter.className} min-h-screen flex flex-col relative`} suppressHydrationWarning>
         <Header />
-        <main className="flex-grow mt-4">{children}</main>
+         <main className="flex-grow mt-14">{children}</main>
         <Footer />
       </body>
     </html>

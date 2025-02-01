@@ -13,15 +13,18 @@ interface Product {
 }
 
 // Componente separato per il contenuto che usa useSearchParams
-const CatalogContent = () => {
-  const searchParams = useSearchParams();
-  const category = searchParams.get('category');
-  let products: Product[] = category === 'Carni_Rosse' ? Carni_Rosse : 
-                           category === 'Pollame' ? Pollame : 
-                           category === 'Preparati_Pronti' ? Preparati_Pronti : 
-                           category === 'Salumi' ? Salumi : [];
-  
-  return (
+  const catalogMapping: Record<string, Product[]> = {
+    Carni_Rosse: Carni_Rosse,
+    Pollame: Pollame,
+    Preparati_Pronti: Preparati_Pronti,
+    Salumi: Salumi,
+  };
+
+  const CatalogContent = () => {
+    const searchParams = useSearchParams();
+    const category = searchParams.get("category");
+    const products: Product[] = category ? catalogMapping[category] ?? [] : [];
+    return (
     <>
       {/* Intestazione Categoria */}
       <section className="category-header">

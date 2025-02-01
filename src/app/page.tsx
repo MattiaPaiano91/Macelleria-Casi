@@ -1,7 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import Swiper from '@/components/swiper';
 import CallToFb from '@/components/CallToFb';
 
 
@@ -33,9 +32,6 @@ export default function HomePage() {
                     <a  href="#products">Scopri i Nostri Prodotti</a>
                   </button>
                 </div>
-              </div>
-              <div className="w-1/2 h-full flex items-end ">
-                <Swiper />
               </div>
           </div>
         </section>

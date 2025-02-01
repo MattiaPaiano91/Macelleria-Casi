@@ -1,10 +1,11 @@
 
 import Link from 'next/link';
+import '@/style/globals.css';
 
 const Header: React.FC = () => {
   return (
     <header className="bg-white border-b border-gray-200 py-2">
-      <nav className="container mx-auto flex justify-between items-center px-4">
+      <nav className="container mx-auto flex justify-between items-center h-full">
         {/* Logo sulla sinistra */}
         <div className="flex items-center">
           {/* <Image src="/logo.png" alt="Macelleria Paiano Logo" width={40} height={40} /> */}
