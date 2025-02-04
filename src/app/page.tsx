@@ -23,8 +23,8 @@ export default function HomePage() {
       <div className="min-h-screen w-full">
         {/* Hero Section */}
         <section className="bg-gray-900 p-6 sm:p-8 md:p-12 banner-content w-full">
-          <div className="container mx-auto flex justify-center items-center h-full">
-            <div className="w-full px-4 sm:px-6 md:px-8 lg:w-3/4 xl:w-2/3 text-center text-white py-8 sm:py-12">
+          <div className="container mx-auto flex justify-center items-center h-1/2">
+            <div className="w-full px-4 sm:px-6 md:px-8 lg:w-3/4 xl:w-2/3 text-center text-white py-8 sm:py-12 h-full">
               <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4">
                 Macelleria Paiano
               </h1>
@@ -39,6 +39,27 @@ export default function HomePage() {
                   </button>
                 </a>
               </div>
+            </div>
+          </div>
+          <div className="infinite-carousel ">
+            <div className="carousel-inner">
+              <h1>
+                <span>Ciao e benvenuti! Stella</span>
+              </h1>
+              <h1>
+                <span>Ciao e benvenuti! Stella</span>
+              </h1>
+            </div>
+          </div>
+          <div className="infinite-carousel ">
+            <div className="carousel-inner reverse">
+              <h1>
+                <span>Ciao e benvenuti stella</span>
+              </h1>
+              <h1>
+                <span>Ciao e benvenuti stella</span>
+              </h1>
+             
             </div>
           </div>
         </section>

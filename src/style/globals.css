@@ -172,3 +172,63 @@ footer {
   text-align: center;
   padding: 20px;
 }
+
+
+/* Carosello */
+
+.infinite-carousel {
+  margin: auto;
+  color: #ffffff;
+  max-width: 1000px;
+  width: 90%;
+  overflow: hidden;
+  -webkit-mask: linear-gradient(
+    90deg,
+    transparent,
+    #fff 20%,
+    #fff 80%,
+    transparent
+  );
+  mask: linear-gradient(
+      90deg,
+      transparent,
+      #fff 20%,
+      #fff 80%,
+      transparent
+  );
+}
+
+.infinite-carousel .carousel-inner {
+  width: max-content;
+  padding: 1em 0;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 1em;
+  list-style: none;
+  animation: move 10s linear infinite
+}
+
+.infinite-carousel h1{
+  font-size: 3em;
+  font-weight: 400;
+  letter-spacing: 4px;
+}
+.infinite-carousel h1 span{
+  margin: 0 0.5em;
+}
+
+.infinite-carousel .reverse {
+  animation-direction: reverse;
+}
+
+@keyframes move {
+  to {
+    transform: translate(calc(-50% - 0.5em));
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .infinite-carousel h1 {
+      font-size: 1.5em;
+    }
+}
