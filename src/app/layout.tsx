@@ -22,9 +22,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="it" suppressHydrationWarning>
-      <body className={`${inter.className} min-h-screen flex flex-col relative`} suppressHydrationWarning>
+      <body
+        className={`${inter.className} min-h-screen flex flex-col relative`}
+        suppressHydrationWarning
+      >
         <Header />
-         <main className="flex-grow mt-14">{children}</main>
+        <main className="flex-grow pt-14">{children}</main>
         <Footer />
       </body>
     </html>
