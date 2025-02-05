@@ -39,7 +39,7 @@ header {
 }
 
 /* Menu mobile */
-#menu-toggle:checked~div {
+#menu-toggle:checked ~ div {
   display: flex;
   flex-direction: column;
 }
@@ -80,7 +80,7 @@ main {
 
 /* Effetto Parallax */
 .parallax {
-  background-image: url('/parallax.webp');
+  background-image: url("/parallax.webp");
   background-attachment: fixed;
   background-position: center center;
   background-repeat: no-repeat;
@@ -173,62 +173,67 @@ footer {
   padding: 20px;
 }
 
-
 /* Carosello */
 
+.infinite-carousel-container {
+  width: 100%;
+  margin-top: 2rem;
+}
+
 .infinite-carousel {
-  margin: auto;
-  color: #ffffff;
-  max-width: 1000px;
-  width: 90%;
+  position: relative;
+  height: 60px;
+  width: 100%;
   overflow: hidden;
   -webkit-mask: linear-gradient(
     90deg,
-    transparent,
-    #fff 20%,
-    #fff 80%,
-    transparent
+    transparent 0%,
+    #fff 15%,
+    #fff 85%,
+    transparent 100%
   );
   mask: linear-gradient(
-      90deg,
-      transparent,
-      #fff 20%,
-      #fff 80%,
-      transparent
+    90deg,
+    transparent 0%,
+    #fff 15%,
+    #fff 85%,
+    transparent 100%
   );
 }
 
-.infinite-carousel .carousel-inner {
-  width: max-content;
-  padding: 1em 0;
+.carousel-track {
   display: flex;
-  flex-wrap: nowrap;
-  gap: 1em;
-  list-style: none;
-  animation: move 10s linear infinite
+  width: fit-content;
+  animation: scroll 20s linear infinite;
+  color: #ffffff;
 }
 
-.infinite-carousel h1{
+.carousel-track h1 {
   font-size: 3em;
   font-weight: 400;
   letter-spacing: 4px;
+  white-space: nowrap;
 }
-.infinite-carousel h1 span{
+
+.carousel-track h1 span {
   margin: 0 0.5em;
 }
 
-.infinite-carousel .reverse {
+.carousel-track.reverse {
   animation-direction: reverse;
 }
 
-@keyframes move {
-  to {
-    transform: translate(calc(-50% - 0.5em));
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
   }
 }
 
 @media screen and (max-width: 600px) {
-  .infinite-carousel h1 {
-      font-size: 1.5em;
-    }
+  .carousel-track h1 {
+    font-size: 1.5em;
+  }
 }

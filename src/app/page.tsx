@@ -23,8 +23,8 @@ export default function HomePage() {
       <div className="min-h-screen w-full">
         {/* Hero Section */}
         <section className="bg-gray-900 p-6 sm:p-8 md:p-12 banner-content w-full">
-          <div className="container mx-auto flex justify-center items-center h-1/2">
-            <div className="w-full px-4 sm:px-6 md:px-8 lg:w-3/4 xl:w-2/3 text-center text-white py-8 sm:py-12 h-full">
+          <div className="container mx-auto flex justify-center items-center">
+            <div className="w-full px-4 sm:px-6 md:px-8 lg:w-3/4 xl:w-2/3 text-center text-white py-8 sm:py-12">
               <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4">
                 Macelleria Paiano
               </h1>
@@ -41,76 +41,42 @@ export default function HomePage() {
               </div>
             </div>
           </div>
-          <div className="infinite-carousel ">
-            <div className="carousel-inner">
-              <h1>
-                <span>Ciao e benvenuti! Stella</span>
-              </h1>
-              <h1>
-                <span>Ciao e benvenuti! Stella</span>
-              </h1>
-            </div>
-          </div>
-          <div className="infinite-carousel ">
-            <div className="carousel-inner reverse">
-              <h1>
-                <span>Ciao e benvenuti stella</span>
-              </h1>
-              <h1>
-                <span>Ciao e benvenuti stella</span>
-              </h1>
-             
-            </div>
-          </div>
-        </section>
 
-        {/* Features Section */}
-        <section className="py-12 sm:py-16 bg-white">
-          <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-              {/* Orari di Apertura */}
-              <div className="text-center p-4 sm:p-6 bg-red-50 rounded-lg flex flex-col items-center">
-                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-red-800 rounded-full flex items-center justify-center mb-3 sm:mb-4">
-                  <Clock className="text-white" size={24} />
-                </div>
-                <h3 className="text-lg sm:text-xl font-semibold mb-2">
-                  Orari di Apertura
-                </h3>
-                <p className="text-sm sm:text-base">
-                  Lun-Sab: 7:00-13:00, 16:30-20:00
-                  <br />
-                  Gio: 7:00-13:00 Dom: Chiuso
-                </p>
+          <div className="infinite-carousel-container">
+            <div className="infinite-carousel">
+              <div className="carousel-track">
+                <h1>
+                  <span>Ciao e benvenuti! Stella</span>
+                </h1>
+                <h1>
+                  <span>Ciao e benvenuti! Stella</span>
+                </h1>
+                <h1>
+                  <span>Ciao e benvenuti! Stella</span>
+                </h1>
+                <h1>
+                  <span>Ciao e benvenuti! Stella</span>
+                </h1>
               </div>
-
-              {/* Contattaci */}
-              <div className="text-center p-4 sm:p-6 bg-red-50 rounded-lg flex flex-col items-center">
-                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-red-800 rounded-full flex items-center justify-center mb-3 sm:mb-4">
-                  <Phone className="text-white" size={24} />
+            </div>
+            ;
+            <div className="infinite-carousel-container">
+              {/* Seconda riga - va verso destra */}
+              <div className="infinite-carousel">
+                <div className="carousel-track reverse">
+                  <h1>
+                    <span>Ciao e benvenuti stella</span>
+                  </h1>
+                  <h1>
+                    <span>Ciao e benvenuti stella</span>
+                  </h1>
+                  <h1>
+                    <span>Ciao e benvenuti stella</span>
+                  </h1>
+                  <h1>
+                    <span>Ciao e benvenuti stella</span>
+                  </h1>
                 </div>
-                <h3 className="text-lg sm:text-xl font-semibold mb-2">
-                  Contattaci
-                </h3>
-                <p className="text-sm sm:text-base">
-                  Tel: 0836 428863
-                  <br />
-                  Email: info@macelleriapaiano.it
-                </p>
-              </div>
-
-              {/* Dove Siamo */}
-              <div className="text-center p-4 sm:p-6 bg-red-50 rounded-lg flex flex-col items-center">
-                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-red-800 rounded-full flex items-center justify-center mb-3 sm:mb-4">
-                  <MapPin className="text-white" size={24} />
-                </div>
-                <h3 className="text-lg sm:text-xl font-semibold mb-2">
-                  Dove Siamo
-                </h3>
-                <p className="text-sm sm:text-base">
-                  Via Jan Palach, 18
-                  <br />
-                  73024 Maglie (LE)
-                </p>
               </div>
             </div>
           </div>
