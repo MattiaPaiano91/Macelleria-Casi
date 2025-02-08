@@ -1,8 +1,6 @@
 import React from "react";
 import Head from "next/head";
 import Link from "next/link";
-import CallToFb from "@/components/CallToFb";
-import { Clock, Phone, MapPin } from "lucide-react";
 
 export default function HomePage() {
   const categories = ["Carni Rosse", "Pollame", "Preparati Pronti", "Salumi"];
@@ -120,8 +118,6 @@ export default function HomePage() {
             </div>
           </div>
         </section>
-
-        <CallToFb />
       </div>
     </>
   );
