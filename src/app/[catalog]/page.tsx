@@ -2,6 +2,7 @@
 
 import { Pollame, Preparati_Pronti, Salumi, Carni_Rosse } from "../data/product";
 import { JSX, Suspense } from 'react'
+import Image from "next/image";
 import './catalog.css';
 
 
@@ -44,7 +45,7 @@ interface Product {
         {products.map((product, index) => (
           <div key={index} className="product-card">
             <figure>
-              <img src={product.image} alt={product.name} />
+              <Image width={500} height={500} src={product.image } alt={product.name} />
               <figcaption>{product.name}</figcaption>
             </figure>
             <p>{product.description}</p>

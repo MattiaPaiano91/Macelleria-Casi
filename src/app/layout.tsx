@@ -1,10 +1,15 @@
 import type { Metadata } from "next";
-import { Inter } from 'next/font/google';
+import { Poppins } from 'next/font/google';
+
 import '@/style/globals.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
-const inter = Inter({ subsets: ['latin'] });
+const lato = Poppins({
+  weight: ["400", "700"],
+  subsets: ["latin"],
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Macelleria Paiano",
@@ -23,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="it" suppressHydrationWarning>
       <body
-        className={`${inter.className} min-h-screen flex flex-col relative`}
+        className={`${lato.className} min-h-screen flex flex-col relative`}
         suppressHydrationWarning
       >
         <Header />
