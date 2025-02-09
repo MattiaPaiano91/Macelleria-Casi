@@ -1,9 +1,13 @@
 
-import { NextPage } from "next";
-import { Pollame, Preparati_Pronti, Salumi, Carni_Rosse } from "../data/product";
 
+import { Pollame, Preparati_Pronti, Salumi, Carni_Rosse } from "../data/product";
 import { JSX, Suspense } from 'react'
 import './catalog.css';
+
+
+// Il nome della rotta è chiuso all'interno delle parentesi quadre -> [catalog] <-
+// questo fa si che next crei una rotta che cambia nome in base al parametro che passi nel path url (dynamic route)
+
 
 interface Product {
   name: string;
@@ -59,12 +63,19 @@ interface CatalogPage {
 }
 
 export default async function CatalogPage({ params }: { params: Promise<{ catalog: string }> }): Promise<JSX.Element> {
- 
+  
+  // all'iterno del componente si può avere accesso alla promise "params" che contiene tra le altre cose
+  // il nome del path specificato nella home page
+
  const { catalog } = await params;
 
   return (
     <div className="container mx-auto">
       <Suspense fallback={<div>Loading...</div>}>
+        {/**passo come props catalog al componente che sviluppa la pagina, ho trovato questo metodo e credo sia
+         * migliore rispetto al passare il parametro come query come facevo prima, ora in base alla categoria
+         * che si sceglie l'url avrà quel nome, es: /Carni_rosse, /Pollame ecc
+         */}
         <CatalogContent category={catalog} />
       </Suspense>
     </div>
