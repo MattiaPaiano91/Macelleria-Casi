@@ -1,8 +1,7 @@
-'use client';
 
 import { NextPage } from "next";
 import { Pollame, Preparati_Pronti, Salumi, Carni_Rosse } from "../data/product";
-import { useSearchParams } from 'next/navigation'
+
 import { Suspense } from 'react'
 import './catalog.css';
 
@@ -20,9 +19,15 @@ interface Product {
     Salumi: Salumi,
   };
 
-  const CatalogContent = () => {
-    const searchParams = useSearchParams();
-    const category = searchParams.get("category");
+  interface CatalogContentProps {
+    category: string | null;
+  }
+
+  const CatalogContent: React.FC<CatalogContentProps> = (props) => {
+
+    console.log("porps", props);
+    
+    const category = props.category;
     const products: Product[] = category ? catalogMapping[category] ?? [] : [];
     return (
     <>
@@ -48,12 +53,21 @@ interface Product {
   );
 };
 
-// Componente principale della pagina
-const CatalogPage: NextPage = () => {
+
+interface CatalogPageParams {
+  params: {
+    catalog: string;
+  };
+}
+
+const CatalogPage: NextPage<CatalogPageParams> = async ({ params }) => {
+    
+ const userSearchParams = params.catalog;
+
   return (
     <div className="container mx-auto">
       <Suspense fallback={<div>Loading...</div>}>
-        <CatalogContent />
+        <CatalogContent category={userSearchParams} />
       </Suspense>
     </div>
   );

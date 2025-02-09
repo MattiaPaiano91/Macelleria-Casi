@@ -94,7 +94,7 @@ export default function HomePage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
               {slug_categories.map((category) => (
                 <Link
-                  href={{ pathname: "/catalog", query: { category: category } }}
+                  href={{ pathname: `/${category}` }}
                   key={category}
                   className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col transition-transform hover:scale-105"
                 >
