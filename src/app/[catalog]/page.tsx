@@ -64,15 +64,17 @@ interface CatalogPage {
 
 export default async function CatalogPage({ params }: { params: Promise<{ catalog: string }> }): Promise<JSX.Element> {
   
-  // all'iterno del componente si può avere accesso alla promise "params" che contiene tra le altre cose
-  // il nome del path specificato nella home page
-
+  /* all'iterno del componente si può avere accesso alla promise "params" che contiene tra le altre cose
+   il nome del path specificato nella home page
+            |
+            v
+  */      
  const { catalog } = await params;
 
   return (
     <div className="container mx-auto">
       <Suspense fallback={<div>Loading...</div>}>
-        {/**passo come props catalog al componente che sviluppa la pagina, ho trovato questo metodo e credo sia
+        {/**passo come props "catalog" al componente che sviluppa la pagina, ho trovato questo metodo e credo sia
          * migliore rispetto al passare il parametro come query come facevo prima, ora in base alla categoria
          * che si sceglie l'url avrà quel nome, es: /Carni_rosse, /Pollame ecc
          */}
