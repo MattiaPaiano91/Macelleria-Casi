@@ -7,7 +7,7 @@ export default function HomePage() {
   const slug_categories = categories.map((category) =>
     category.replace(" ", "_")
   );
-
+ 
   return (
     <>
       <Head>
@@ -44,16 +44,16 @@ export default function HomePage() {
             <div className="infinite-carousel">
               <div className="carousel-track">
                 <h1>
-                  <span>Ciao e benvenuti! Stella</span>
+                  <span>Ciao e benvenuti! *</span>
                 </h1>
                 <h1>
-                  <span>Ciao e benvenuti! Stella</span>
+                  <span>Ciao e benvenuti! *</span>
                 </h1>
                 <h1>
-                  <span>Ciao e benvenuti! Stella</span>
+                  <span>Ciao e benvenuti! *</span>
                 </h1>
                 <h1>
-                  <span>Ciao e benvenuti! Stella</span>
+                  <span>Ciao e benvenuti! *</span>
                 </h1>
               </div>
             </div>
@@ -63,16 +63,16 @@ export default function HomePage() {
               <div className="infinite-carousel">
                 <div className="carousel-track reverse">
                   <h1>
-                    <span>Ciao e benvenuti stella</span>
+                    <span>Ciao e benvenuti *</span>
                   </h1>
                   <h1>
-                    <span>Ciao e benvenuti stella</span>
+                    <span>Ciao e benvenuti *</span>
                   </h1>
                   <h1>
-                    <span>Ciao e benvenuti stella</span>
+                    <span>Ciao e benvenuti *</span>
                   </h1>
                   <h1>
-                    <span>Ciao e benvenuti stella</span>
+                    <span>Ciao e benvenuti *</span>
                   </h1>
                 </div>
               </div>
@@ -96,6 +96,7 @@ export default function HomePage() {
                 <Link
                   href={{ pathname: `/${category}` }}
                   key={category}
+                  prefetch={false}
                   className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col transition-transform hover:scale-105"
                 >
                   <div className="h-36 sm:h-48 bg-gray-200 product">

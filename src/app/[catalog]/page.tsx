@@ -2,7 +2,7 @@
 import { NextPage } from "next";
 import { Pollame, Preparati_Pronti, Salumi, Carni_Rosse } from "../data/product";
 
-import { Suspense } from 'react'
+import { JSX, Suspense } from 'react'
 import './catalog.css';
 
 interface Product {
@@ -24,8 +24,6 @@ interface Product {
   }
 
   const CatalogContent: React.FC<CatalogContentProps> = (props) => {
-
-    console.log("porps", props);
     
     const category = props.category;
     const products: Product[] = category ? catalogMapping[category] ?? [] : [];
@@ -54,23 +52,24 @@ interface Product {
 };
 
 
-interface CatalogPageParams {
+interface CatalogPage {
   params: {
     catalog: string;
   };
 }
 
-const CatalogPage: NextPage<CatalogPageParams> = async ({ params }) => {
-    
- const userSearchParams = params.catalog;
+export default async function CatalogPage({ params }: { params: Promise<{ catalog: string }> }): Promise<JSX.Element> {
+ 
+ const { catalog } = await params;
 
   return (
     <div className="container mx-auto">
       <Suspense fallback={<div>Loading...</div>}>
-        <CatalogContent category={userSearchParams} />
+        <CatalogContent category={catalog} />
       </Suspense>
     </div>
   );
 };
 
-export default CatalogPage;
+
+
