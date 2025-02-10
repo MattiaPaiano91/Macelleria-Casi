@@ -5,6 +5,7 @@ import '@/style/globals.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
+
 const lato = Poppins({
   weight: ["400", "700"],
   subsets: ["latin"],

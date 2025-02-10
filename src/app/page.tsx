@@ -12,10 +12,10 @@ export default function HomePage() {
   return (
     <>
       <Head>
-        <title>Macelleria Paiano | Home</title>
+        <title>Macelleria Casi | Home</title>
         <meta
           name="description"
-          content="Scopri i migliori prodotti di carne presso la Macelleria Paiano."
+          content="Scopri i migliori prodotti di carne presso la Macelleria Casi."
         />
       </Head>
 
@@ -25,7 +25,7 @@ export default function HomePage() {
           <div className="container mx-auto flex justify-center items-center">
             <div className="w-full px-4 sm:px-6 md:px-8 lg:w-3/4 xl:w-2/3 text-center text-white py-8 sm:py-12">
               <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4">
-                Macelleria Paiano
+                Macelleria Casi
               </h1>
               <p className="text-xs sm:text-sm md:text-base lg:text-lg mb-6 sm:mb-8 leading-relaxed">
                 Dal 1980 portiamo sulla vostra tavola carni selezionate di prima

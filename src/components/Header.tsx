@@ -6,7 +6,7 @@ const Header: React.FC = () => {
       <nav className="container mx-auto flex justify-between items-center h-full px-4">
         <div className="flex items-center">
           <span className="ml-2 text-lg font-semibold text-gray-800">
-            Macelleria Paiano
+            Macelleria Casi
           </span>
         </div>
 

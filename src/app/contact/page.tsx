@@ -3,6 +3,7 @@ import React from 'react';
 import Head from 'next/head';
 import ContactForm from '@/components/ContactForm';
 
+
 const ContactPage: React.FC = () => {
   return (
     <>
@@ -17,15 +18,8 @@ const ContactPage: React.FC = () => {
           Benvenuti alla Macelleria Paiano! Per qualsiasi informazione, non esitate a contattarci.
         </p>
 
-        <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
-          {/* Informazioni di Contatto */}
-          <div className="space-y-8">
-            {/* ... resto del codice delle informazioni di contatto ... */}
-          </div>
-
           {/* Form di Contatto */}
-          <ContactForm />
-        </div>
+          <ContactForm  />     
       </div>
     </>
   );
