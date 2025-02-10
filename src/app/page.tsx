@@ -1,6 +1,7 @@
 import React from "react";
 import Head from "next/head";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function HomePage() {
   const categories = ["Carni Rosse", "Pollame", "Preparati Pronti", "Salumi"];
@@ -94,15 +95,17 @@ export default function HomePage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
               {slug_categories.map((category) => (
                 <Link
-                //Passo il nome della categoria direttamente nel path url, ho aggiunto le rotte dinamiche
+                  //Passo il nome della categoria direttamente nel path url, ho aggiunto le rotte dinamiche
                   href={{ pathname: `/${category}` }}
                   key={category}
                   prefetch={false}
                   className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col transition-transform hover:scale-105"
                 >
                   <div className="h-36 sm:h-48 bg-gray-200 product">
-                    <img
+                    <Image
                       src={`/${category}.webp`}
+                      width={500}
+                      height={400}
                       alt={category}
                       className="w-full h-full object-cover"
                     />
