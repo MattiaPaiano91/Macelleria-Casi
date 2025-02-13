@@ -1,8 +1,18 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { RiKnifeLine } from "react-icons/ri";
 
 const Header: React.FC = () => {
+    const pathname = usePathname();
+
     return (
-        <header className="pt-8 absolute top-0 w-full z-50 text-white">
+        <header
+            className={`pt-8 absolute top-0 w-full z-50 ${
+                pathname === "/" ? "text-white" : "text-black"
+            } `}
+        >
             <nav className="container mx-auto flex justify-end items-center h-full px-4">
                 {/* Menu Desktop */}
                 <ul className="hidden md:flex gap-4 text-sm font-medium">
@@ -13,7 +23,15 @@ const Header: React.FC = () => {
                         >
                             Home
                         </Link>
+                        <div className="w-full flex justify-center items-center overflow-hidden">
+                            <RiKnifeLine
+                                className={`text-xl -rotate-45 transition-transform duration-300 ${
+                                    pathname === "/" ? "" : "translate-x-14"
+                                } `}
+                            />
+                        </div>
                     </li>
+
                     <li>
                         <Link
                             href="/about"
@@ -21,7 +39,17 @@ const Header: React.FC = () => {
                         >
                             IL Team
                         </Link>
+                        <div className="w-full flex justify-center items-center overflow-hidden">
+                            <RiKnifeLine
+                                className={`text-xl -rotate-45 transition-transform duration-300 ${
+                                    pathname === "/about"
+                                        ? ""
+                                        : "translate-x-14"
+                                } `}
+                            />
+                        </div>
                     </li>
+
                     <li>
                         <Link
                             href="/contact"
@@ -29,6 +57,15 @@ const Header: React.FC = () => {
                         >
                             Contattaci
                         </Link>
+                        <div className="w-full flex justify-center items-center overflow-hidden">
+                            <RiKnifeLine
+                                className={`text-xl -rotate-45 transition-transform duration-300 ${
+                                    pathname === "/contact"
+                                        ? ""
+                                        : "translate-x-14"
+                                } `}
+                            />
+                        </div>
                     </li>
                 </ul>
 

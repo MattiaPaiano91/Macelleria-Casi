@@ -1,15 +1,19 @@
 "use client";
 
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import heroImage from "../../public/heroImg.webp";
 
-const HeroImg = () => {
+const HeroImg: React.FC = () => {
     useEffect(() => {
         const heroImg = document.getElementById("hero-image");
         if (heroImg) {
-            setTimeout(() => {
+            const heroImgTimeout = setTimeout(() => {
                 heroImg.style.transform = "translateY(50%)";
             }, 300);
+
+            return () => {
+                clearTimeout(heroImgTimeout);
+            };
         }
     }, []);
 
