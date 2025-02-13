@@ -37,15 +37,36 @@ const ContactForm = () => {
     event.preventDefault();
     setIsSubmitting(true);
 
+    const regex = {
+      name: /^[a-zA-Z\s]+$/,
+      email: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+      phone: /^\d{10,15}$/,
+      message: /.+/
+    }
+
     const formData = new FormData(event.currentTarget);
-    const templateParams = {
+    const templateParams: { [key: string]: FormDataEntryValue | null } = {
       name: formData.get("name"),
       email: formData.get("email"),
       phone: formData.get("phone"),
       message: formData.get("message"),
     };
-    console.log(event.currentTarget);
-   
+
+    for (const key in templateParams) {
+      if (!regex.hasOwnProperty(key)) {
+        showNotification(
+          "Errore nell'invio del messaggio. Riprova più tardi.",
+          true
+        );
+      }
+      for (const reg in regex) {
+        if (!regex[reg as keyof typeof regex].test(templateParams[reg] as string)) {
+          showNotification(`Errore nel campo ${reg}.`, true);
+          setIsSubmitting(false);
+          return;
+        }
+      } 
+    }
 
     try {
       const response = await emailjs.send(
