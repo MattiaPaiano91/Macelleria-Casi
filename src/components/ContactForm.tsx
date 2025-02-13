@@ -38,18 +38,18 @@ const ContactForm = () => {
     setIsSubmitting(true);
 
     const regex = {
-      name: /^[a-zA-Z\s]+$/,
+      nome: /^[a-zA-Z\s]+$/,
       email: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-      phone: /^\d{10,15}$/,
-      message: /.+/
+      telefono: /^\d{10,15}$/,
+      messaggio: /.+/
     }
 
     const formData = new FormData(event.currentTarget);
     const templateParams: { [key: string]: FormDataEntryValue | null } = {
-      name: formData.get("name"),
+      nome: formData.get("name"),
       email: formData.get("email"),
-      phone: formData.get("phone"),
-      message: formData.get("message"),
+      telefono: formData.get("phone"),
+      messaggio: formData.get("message"),
     };
 
     for (const key in templateParams) {
@@ -61,11 +61,12 @@ const ContactForm = () => {
       }
       for (const reg in regex) {
         if (!regex[reg as keyof typeof regex].test(templateParams[reg] as string)) {
-          showNotification(`Errore nel campo ${reg}.`, true);
+          showNotification(`Errore nel campo: ${reg}, per favore controllare i dati inseriti.`, true);
           setIsSubmitting(false);
           return;
         }
-      } 
+      }
+ 
     }
 
     try {
@@ -95,7 +96,7 @@ const ContactForm = () => {
       {/* Notification */}
       <div
         className={`
-          fixed top-4 right-4 left-4 md:left-auto md:w-96 p-4 rounded-lg shadow-lg
+          fixed top-4  left-4 md:left-auto md:w-96 p-4 rounded-lg shadow-lg
           transition-all duration-300 ease-in-out
           ${
             notification.show
