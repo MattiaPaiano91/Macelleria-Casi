@@ -1,0 +1,14 @@
+FROM node:22
+WORKDIR /app
+COPY package*.json ./
+RUN \
+    if [ -f yarn.lock ]; then yarn --frozen-lockfile; \
+    elif [ -f package-lock.json ]; then npm ci; \
+    elif [ -f pnpm-lock.yaml ]; then yarn global add pnpm && pnpm i; \
+    else echo "Lockfile not found." && exit 1; \
+    fi
+COPY . .
+EXPOSE 3000
+CMD ["npm", "run", "dev"]
+
+# Per costruire l'immagine docker su CLI digitare "docker build -t <NOME_DELL'IMMAGINE_CHE_VUOI> ."
