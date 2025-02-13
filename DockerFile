@@ -12,3 +12,4 @@ EXPOSE 3000
 CMD ["npm", "run", "dev"]
 
 # Per costruire l'immagine docker su CLI digitare "docker build -t <NOME_DELL'IMMAGINE_CHE_VUOI> ."
+# Per lanciare l'applicazione sempre su CLI digitare "docker compose up -d"
