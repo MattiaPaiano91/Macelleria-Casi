@@ -1,8 +1,10 @@
 services:  
-    macelleria-casi:    
-         build:      
-              context: .   
-              dockerfile: Dockerfile    
-              ports:     
-                   - "3000:3000"   
+    app:    
+     build:      
+          context: .
+     container_name: macelleria-casi
+     ports:
+          - "3000:3000"
+         
+            
             
