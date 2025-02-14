@@ -37,15 +37,40 @@ const ContactForm = () => {
         event.preventDefault();
         setIsSubmitting(true);
 
-        const form = event.currentTarget;
-        const formData = new FormData(form);
+        const regex = {
+            name: /^[a-zA-Z\s]+$/,
+            email: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+            phone: /^\d{10,15}$/,
+            message: /.+/,
+        };
 
-        const templateParams = {
+        const formData = new FormData(event.currentTarget);
+        const templateParams: { [key: string]: FormDataEntryValue | null } = {
             name: formData.get("name"),
             email: formData.get("email"),
             phone: formData.get("phone"),
             message: formData.get("message"),
         };
+
+        for (const key in templateParams) {
+            if (!regex.hasOwnProperty(key)) {
+                showNotification(
+                    "Errore nell'invio del messaggio. Riprova più tardi.",
+                    true
+                );
+            }
+            for (const reg in regex) {
+                if (
+                    !regex[reg as keyof typeof regex].test(
+                        templateParams[reg] as string
+                    )
+                ) {
+                    showNotification(`Errore nel campo ${reg}.`, true);
+                    setIsSubmitting(false);
+                    return;
+                }
+            }
+        }
 
         try {
             const response = await emailjs.send(
@@ -56,7 +81,6 @@ const ContactForm = () => {
 
             if (response.status === 200) {
                 showNotification("Messaggio inviato con successo!", false);
-                form.reset();
             }
         } catch (error) {
             showNotification(
@@ -74,7 +98,7 @@ const ContactForm = () => {
             {/* Notification */}
             <div
                 className={`
-          fixed bottom-20 right-4 left-4 md:left-auto md:w-96 p-4 rounded-lg shadow-lg
+          fixed top-4  left-4 md:left-auto md:w-96 p-4 rounded-lg shadow-lg
           transition-all duration-300 ease-in-out
           ${
               notification.show
