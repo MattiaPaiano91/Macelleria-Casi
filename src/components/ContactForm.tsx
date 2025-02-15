@@ -98,7 +98,7 @@ const ContactForm = () => {
             {/* Notification */}
             <div
                 className={`
-          fixed top-4  left-4 md:left-auto md:w-96 p-4 rounded-lg shadow-lg
+          fixed  bottom-20 right-4 md:left-auto md:w-96 p-4 rounded-lg shadow-lg
           transition-all duration-300 ease-in-out
           ${
               notification.show
