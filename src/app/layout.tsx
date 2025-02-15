@@ -1,15 +1,8 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
 
 import "@/style/globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-
-const lato = Poppins({
-    weight: ["400", "700"],
-    subsets: ["latin"],
-    display: "swap",
-});
 
 export const metadata: Metadata = {
     title: "Macelleria Paiano",
@@ -29,7 +22,7 @@ export default function RootLayout({
     return (
         <html lang="it" suppressHydrationWarning>
             <body
-                className={`${lato.className} min-h-screen flex flex-col relative`}
+                className={`min-h-screen flex flex-col relative`}
                 suppressHydrationWarning
             >
                 <Header />

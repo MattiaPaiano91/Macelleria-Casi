@@ -1,7 +1,5 @@
 import React from "react";
 import Head from "next/head";
-import Link from "next/link";
-import HeroImg from "@/components/HeroImg";
 import ProductCategoryCard from "@/components/ProductCategoryCard";
 
 export default function HomePage() {

@@ -179,7 +179,7 @@ const ContactForm = () => {
                             id="message"
                             name="message"
                             rows={4}
-                            className="w-full px-4 py-2 border border-gray-300  focus:ring-red-500 focus:border-red-500"
+                            className="w-full px-4 h-[200px] py-2 border resize-none border-gray-300  focus:ring-red-500 focus:border-red-500"
                             required
                             disabled={isSubmitting}
                         ></textarea>

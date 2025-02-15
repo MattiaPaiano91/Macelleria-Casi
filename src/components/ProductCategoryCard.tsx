@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import Image from "next/image";
+import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 
 const ProductCategoryCard: React.FC<{ category: string }> = ({ category }) => {
     return (
@@ -10,7 +11,7 @@ const ProductCategoryCard: React.FC<{ category: string }> = ({ category }) => {
             className="overflow-hidden flex flex-col"
         >
             <div className="py-3 ">
-                <h3 className="text-base sm:text-xl md:text-3xl font-semibold heroFont">
+                <h3 className="text-xl md:text-3xl font-semibold heroFont">
                     {category.replace("_", " ")}
                 </h3>
             </div>
@@ -24,8 +25,9 @@ const ProductCategoryCard: React.FC<{ category: string }> = ({ category }) => {
                 />
             </div>
             <div className="py-5 text-end">
-                <button className="bg-[#9b111e] text-white hover:opacity-80 transition-opacity duration-150 px-6 py-2 rounded-full">
-                    Scopri di più <span className="arrow">→</span>
+                <button className="bg-[#9b111e] text-white text-xs sm:text-sm md:text-lg hover:opacity-80 transition-opacity duration-150 px-3 md:px-6 py-1 md:py-2 rounded-full">
+                    Scopri di più{" "}
+                    <MdOutlineKeyboardArrowRight className="inline-block text-xs sm:text-sm md:text-lg" />
                 </button>
             </div>
         </Link>
