@@ -1,94 +1,76 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+@import url(https://fonts.googleapis.com/css?family=Playfair+Display:regular,500,600,700,800,900,italic,500italic,600italic,700italic,800italic,900italic);
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 /* Variabili globali */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-  --primary-color: #9b111e;
-  --secondary-color: #f5f5f5;
+    --background: #ffffff;
+    --foreground: #171717;
+    --primary-color: #9b111e;
+    --secondary-color: #f5f5f5;
 }
 
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+    :root {
+        --background: #0a0a0a;
+        --foreground: #ededed;
+    }
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+    color: var(--foreground);
+    background: var(--background);
+    font-family: "Poppins", Arial, Helvetica, sans-serif;
 }
 
-/* Header */
-header {
-  height: 56px;
-  padding: 10px 0;
-  position: fixed;
-  width: 100%;
-  z-index: 1000;
-  background: var(--background);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+.heroFont {
+    font-family: "Playfair Display";
 }
 
 /* Menu mobile */
 #menu-toggle:checked ~ div {
-  display: flex;
-  flex-direction: column;
-}
-
-/* Layout */
-main {
-  padding-top: 64px;
-  /* Compensazione per header fisso */
+    display: flex;
+    flex-direction: column;
 }
 
 /* Hero Section */
 .banner-content {
-  height: auto;
-  padding: 4rem 1rem;
-  text-align: center;
-  background-color: #111;
-}
+    height: 100vh;
 
-@media (min-width: 768px) {
-  .banner-content {
-    height: 600px;
-    padding: 6rem 2rem;
-  }
+    text-align: center;
+    background-color: #111;
 }
 
 /* Testo */
 .test {
-  width: 100%;
-  max-width: 1200px;
-  padding: 0 1rem;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 1rem;
 }
 
 @media (min-width: 1024px) {
-  .test {
-    width: 1200px;
-  }
+    .test {
+        width: 1200px;
+    }
 }
 
 /* Effetto Parallax */
 .parallax {
-  background-image: url("/parallax.webp");
-  background-attachment: fixed;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-repeat: no-repeat;
-  overflow: hidden;
-  height: 300px;
-  width: 100%;
+    background-image: url("/parallax.webp");
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    height: 300px;
+    width: 100%;
 }
 
 /* @media (max-width: 768px) {
@@ -99,141 +81,97 @@ main {
 
 /* Sezioni informative */
 .info-section {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
-  padding: 2rem;
-  background-color: var(--secondary-color);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 2rem;
+    background-color: var(--secondary-color);
 }
 
 @media (min-width: 768px) {
-  .info-section {
-    grid-template-columns: repeat(3, 1fr);
-  }
+    .info-section {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 .info-card {
-  text-align: center;
-  padding: 1.5rem;
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 1.5rem;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .info-icon {
-  width: 50px;
-  height: 50px;
-  margin: 0 auto 1rem;
-  background: var(--primary-color);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin: 0 auto 1rem;
+    background: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
 }
 
 .info-icon svg {
-  color: white;
+    color: white;
 }
 
 /* Pulsanti */
 .button {
-  display: inline-block;
-  padding: 10px 20px;
-  font-size: 16px;
-  background: var(--primary-color);
-  color: white;
-  border-radius: 6px;
-  transition: all 0.3s;
-}
-
-.button:hover {
-  background: #7e0b15;
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 6px;
+    transition: all 0.3s;
 }
 
 /* Effetti sulle immagini */
 .product img,
 .arrow {
-  will-change: all;
-  transition: all 0.5s ease-in-out;
+    will-change: all;
+    transition: all 0.5s ease-in-out;
 }
 
 .product:hover img {
-  transform: scale(1.05);
+    transform: scale(1.05);
 }
 
 .button:hover .arrow {
-  transform: translateX(10%);
+    transform: translateX(10%);
 }
 
 /* Footer */
 footer {
-  background: #222;
-  color: white;
-  text-align: center;
-  padding: 20px;
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 20px;
 }
 
-/* Carosello */
-
-.infinite-carousel-container {
-  width: 100%;
-  margin-top: 2rem;
+::-webkit-scrollbar {
+    width: 6px;
+    /* Spessore della scrollbar verticale */
+    height: 6px;
+    /* Spessore della scrollbar orizzontale */
 }
 
-.infinite-carousel {
-  position: relative;
-  height: 60px;
-  width: 100%;
-  overflow: hidden;
-  -webkit-mask: linear-gradient(
-    90deg,
-    transparent 0%,
-    #fff 15%,
-    #fff 85%,
-    transparent 100%
-  );
-  mask: linear-gradient(
-    90deg,
-    transparent 0%,
-    #fff 15%,
-    #fff 85%,
-    transparent 100%
-  );
+::-webkit-scrollbar-track {
+    background: transparent;
+    /* Nessun background */
 }
 
-.carousel-track {
-  display: flex;
-  width: fit-content;
-  animation: scroll 20s linear infinite;
-  color: #ffffff;
+::-webkit-scrollbar-thumb {
+    background-color: #444;
+    /* Grigio scuro */
+    border-radius: 3px;
+    /* Angoli arrotondati */
 }
 
-.carousel-track h1 {
-  font-size: 3em;
-  font-weight: 400;
-  letter-spacing: 4px;
-  white-space: nowrap;
-}
-
-.carousel-track h1 span {
-  margin: 0 0.5em;
-}
-
-.carousel-track.reverse {
-  animation-direction: reverse;
-}
-
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .carousel-track h1 {
-    font-size: 1.5em;
-  }
+/* Per Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #444 transparent;
 }
